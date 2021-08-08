@@ -1,0 +1,8 @@
+
+# run it
+docker-compose up -d mmplot.local
+(used to be run)
+
+# take it down
+docker-compose down
+

@@ -1,7 +1,0 @@
-
-# run it
-docker-compose up -d chia.local
-(used to be run)
-
-# check chia status
-docker exec -it chia-docker_chia.local_1 venv/bin/chia show -s -c

@@ -1,0 +1,27 @@
+version: "3.6"
+
+services:
+
+# chia plotter
+  mmplot.local:
+    hostname: mmplot
+    image: pnupong/mmplot-dp:20210805
+    volumes:
+#      - "/volume1/general/chia/chiahome:/root"
+      - "/volume1/general/chia/plots:/plots"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/volume2/temp1/chiatmp/00tmp:/plots00tmp"
+      - "/volume2/temp1/chiatmp/00logs:/plots00logs"
+    environment:
+       keys: ""
+       TZ: "America/Chicago"
+    command: /bin/bash -c "exec /chia-mmplot/chia_plot --count -1 --tmpdir /plots00tmp/ --tmpdir2 /plots00tmp/ --finaldir /plots/ --contract xch1f5vza4k8ej6rcz6377v7h3tpwg09krap4vzzxv9h3r4lsezpws4swd3mdn   --farmerkey 8843a8dd56902c3c22de7b7d74952ff0d94a7ac4969a48c51d680a86b1e73e063988e15338a8c2c219c40c70bb4fd64d --threads 4 >> /plots00logs/plots_`date "+%Y%m%d_%H%M"`_1.log 2>&1"
+#    entrypoint: /bin/bash
+#    command: -c "/chia-mmplot/chia_plot --count -1 --tmpdir /plots00tmp/ --tmpdir2 /plots00tmp/ --finaldir /plots/ --contract xch1f5vza4k8ej6rcz6377v7h3tpwg09krap4vzzxv9h3r4lsezpws4swd3mdn   --farmerkey 8843a8dd56902c3c22de7b7d74952ff0d94a7ac4969a48c51d680a86b1e73e063988e15338a8c2c219c40c70bb4fd64d --threads 4 >> /plots00logs/plots_`date "+%Y%m%d_%H%M"`_1.log 2>&1"
+    entrypoint: ""
+#    deploy:
+#      resources:
+#        limits:
+#          memory: 4g
+    logging:
+      driver: syslog

@@ -1,0 +1,6 @@
+
+# run it
+docker-compose up -d chia.local
+
+# check chia status
+docker exec -it dk-cmp-mmplot_mmplot.local_1 venv/bin/chia show -s -c
