@@ -1,0 +1,6 @@
+
+# run it
+docker-compose up -d trans-ovpn
+
+# stop
+docker-compose down

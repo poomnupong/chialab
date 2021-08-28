@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  trans-ovpn:
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - '/volume1/general/01trvpn/:/01trvpn'
+      - '/volume2/temp1/01trvpn-home/:/data'
+    environment:
+      - OPENVPN_PROVIDER=VPNUNLIMITED
+      - OPENVPN_CONFIG=ca-tr
+      - OPENVPN_USERNAME=KS2-c44bba892ac7288cbac9a5fcb75fee84
+      - OPENVPN_PASSWORD=3pxhCkSOI8Ik
+      - LOCAL_NETWORK=192.168.86.0/16
+      - TZ=UTC
+      - TRANSMISSION_DOWNLOAD_DIR=/01trvpn
+      - TRANSMISSION_INCOMPLETE_DIR_ENABLED=true
+      - TRANSMISSION_INCOMPLETE_DIR=/data/incomplete
+      - TRANSMISSION_DOWNLOAD_QUEUE_SIZE=20
+      - TRANSMISSION_RATIO_LIMIT=0
+      - TRANSMISSION_RATIO_LIMIT_ENABLED=true
+      - TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true
+      - TRANSMISSION_SPEED_LIMIT=10
+      - TRANSMISSION_WEB_UI=flood-for-transmission
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+    ports:
+      - '9091:9091'
+    image: haugene/transmission-openvpn:3.7
+    deploy:
+      resources:
+        limits:
+          memory: 4g                                                                                                                            
+        # cpus: '1'
