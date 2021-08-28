@@ -6,11 +6,15 @@ services:
   chia.local:
     hostname: chia
     #image: ghcr.io/chia-network/chia:latest
-    image: pnupong/dk-chia:1.2.3
+    image: pnupong/dk-chia:1.2.5
     volumes:
       - "/volume1/general/chia/chiahome:/root"
       - "/volume1/general/chia/plots:/plots"
       - "/volumeUSB1/usbshare/chia/plots:/plotsusb1"
+      - "/volumeUSB2/usbshare/chia/plots:/plotsusb2"
+      - "/volumeUSB3/usbshare/chia/plots:/plotsusb3"
+      - "/volumeUSB4/usbshare/chia/plots:/plotsusb4"
+      - "/volumeUSB5/usbshare/chia/plots:/plotsusb5"
       - "/etc/localtime:/etc/localtime:ro"
     environment:
       keys: ""
