@@ -7,15 +7,27 @@ services:
     hostname: chia
     #image: ghcr.io/chia-network/chia:latest
     image: pnupong/dk-chia:1.2.5
+    ports:
+      - "8447:8447"
     volumes:
       - "/volume1/general/chia/chiahome:/root"
-      - "/volume1/general/chia/plots:/plots"
-      - "/volumeUSB1/usbshare/chia/plots:/plotsusb1"
-      - "/volumeUSB2/usbshare/chia/plots:/plotsusb2"
-      - "/volumeUSB3/usbshare/chia/plots:/plotsusb3"
-      - "/volumeUSB4/usbshare/chia/plots:/plotsusb4"
-      - "/volumeUSB5/usbshare/chia/plots:/plotsusb5"
       - "/etc/localtime:/etc/localtime:ro"
+      - "/volume1/general/chia/plots:/plots"
+#      - "/volumeUSB1/usbshare/chia/plots:/plotsusb1"
+#      - "/volumeUSB2/usbshare/chia/plots:/plotsusb2"
+#      - "/volumeUSB3/usbshare/chia/plots:/plotsusb3"
+#      - "/volumeUSB4/usbshare/chia/plots:/plotsusb4"
+#      - "/volumeUSB5/usbshare/chia/plots:/plotsusb5"
+#      - "/volumeUSB6/usbshare/chia/plots:/plotsusb6"
+#      - "/volumeUSB7/usbshare/chia/plots:/plotsusb7"
+#      - "/volumeUSB8/usbshare/chia/plots:/plotsusb8"
+#      - "/volumeUSB9/usbshare/chia/plots:/plotsusb9"
+#      - "/volumeUSB10/usbshare/chia/plots:/plotsusb10"
+#      - "/volumeUSB11/usbshare/chia/plots:/plotsusb11"
+#      - "/volumeUSB12/usbshare/chia/plots:/plotsusb12"
+#      - "/volumeUSB13/usbshare/chia/plots:/plotsusb13"
+#      - "/volumeUSB14/usbshare/chia/plots:/plotsusb14"
+#      - "/volumeUSB15/usbshare/chia/plots:/plotsusb15"
     environment:
       keys: ""
       TZ: "America/Chicago"
@@ -28,24 +40,24 @@ services:
     logging:
       driver: syslog
 
-# chia plotter
-  chia-plot.local:
-    hostname: chia-plot
-    image: ghcr.io/chia-network/chia:latest
-    volumes:
-      - "/volume1/general/chia/chiahome:/root"
-      - "/volume1/general/chia/plots:/plots"
-      - "/etc/localtime:/etc/localtime:ro"
-      - "/volume2/chiatemp/00tmp:/plots00tmp"
-      - "/volume2/chiatemp/00logs:/plots00logs"
-    environment:
-       keys: ""
-       TZ: "America/Chicago"
+#*** chia plotter
+#  chia-plot.local:
+#    hostname: chia-plot
+#    image: ghcr.io/chia-network/chia:latest
+#    volumes:
+#      - "/volume1/general/chia/chiahome:/root"
+#      - "/volume1/general/chia/plots:/plots"
+#      - "/etc/localtime:/etc/localtime:ro"
+#      - "/volume2/chiatemp/00tmp:/plots00tmp"
+#      - "/volume2/chiatemp/00logs:/plots00logs"
+#    environment:
+#       keys: ""
+#       TZ: "America/Chicago"
     #restart: always
-    entrypoint: ""
-    deploy:
-      resources:
-        limits:
-          memory: 4g
-    logging:
-      driver: syslog
+#    entrypoint: ""
+#    deploy:
+#      resources:
+#        limits:
+#          memory: 4g
+#    logging:
+#      driver: syslog
