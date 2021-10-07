@@ -1,0 +1,9 @@
+# run it
+docker-compose up -d 
+
+# check chia status
+docker exec -it chiaharvest1 venv/bin/chia show -s -c
+
+# shutdown
+docker exec -it chiaharvest1 venv/bin/chia stop all
+docker-compose down

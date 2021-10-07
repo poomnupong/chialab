@@ -1,0 +1,59 @@
+version: "3.6"
+
+services:
+
+# chia farming
+  chia:
+    hostname: chia
+    container_name: chiaharvest1
+    #image: ghcr.io/chia-network/chia:latest
+    image: pnupong/dk-chia:1.2.9
+    #image: chianetwork/chia-docker:latest
+    ports:
+      - "8448:8448"
+      - "8447:8447"
+      - "8444:8444"
+      - "8555:8555"
+    volumes:
+      - "/home/poom/chiahome:/root"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/mnt/plots:/plots"
+      - "/mnt/dskusb01:/dskusb01"
+      - "/mnt/dskusb02:/dskusb02"
+      - "/mnt/dskusb03:/dskusb03"
+      - "/mnt/dskusb04:/dskusb04"
+      - "/mnt/dskusb05:/dskusb05"
+      - "/mnt/dskusb06:/dskusb06"
+      - "/mnt/dskusb07:/dskusb07"
+      - "/mnt/dskusb08:/dskusb08"
+      - "/mnt/dskusb09:/dskusb09"
+      - "/mnt/dskusb10:/dskusb10"
+      - "/mnt/dskusb11:/dskusb11"
+      - "/mnt/dskusb12:/dskusb12"
+      - "/mnt/dskusb13:/dskusb13"
+      - "/mnt/dskusb14:/dskusb14"
+      - "/mnt/dskusb15:/dskusb15"
+      - "/mnt/dskusb16:/dskusb16"
+      - "/mnt/dskusb17:/dskusb17"
+      - "/mnt/dskusb18:/dskusb18"
+    environment:
+      keys: "copy"
+      ca: "/root/chia-ca"
+      harvester: "true"
+      farmer: "false"
+      plots_dir: "/plots"
+      farmer_address: "192.168.86.10"
+      farmer_port: "8447"
+      testnet: "false"
+      full_node_port: "null"
+      p: "/plots"
+      TZ: "America/Chicago"
+    restart: always
+#    deploy:
+#      resources:
+#        limits:
+#          memory: 4g
+#          cpus: '1'
+    logging:
+      driver: syslog
+

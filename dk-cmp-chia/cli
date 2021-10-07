@@ -1,9 +1,11 @@
+*** this docker-compose is set to use host network mode in order to receive connections from harvester
+*** because default network mode (bridge) doesn't work 
 # run it
-docker-compose up -d chia.local
+docker-compose up -d 
 
 # check chia status
-docker exec -it dk-cmp-chia_chia.local_1 venv/bin/chia show -s -c
+docker exec -it chia01 venv/bin/chia show -s -c
 
 # shutdown
-docker exec -it dk-cmp-chia_chia.local_1 venv/bin/chia stop all
+docker exec -it chia01 venv/bin/chia stop all
 docker-compose down
