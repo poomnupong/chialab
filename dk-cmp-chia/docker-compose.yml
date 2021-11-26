@@ -7,7 +7,7 @@ services:
     hostname: chia
     container_name: chia01
     #image: ghcr.io/chia-network/chia:latest
-    image: pnupong/dk-chia:1.2.10
+    image: pnupong/dk-chia:1.2.11
     network_mode: host
 #    ports:
 #      - "192.168.86.10:8444:8444"
