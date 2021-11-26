@@ -7,3 +7,7 @@ docker exec -it chiaharvest1 venv/bin/chia show -s -c
 # shutdown
 docker exec -it chiaharvest1 venv/bin/chia stop all
 docker-compose down
+
+# mount
+for i in {1..9}; do mount /mnt/dskusb$i ; done
+for i in {10..18}; do mount /mnt/dskusb$i ; done
