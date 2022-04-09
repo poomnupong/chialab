@@ -9,5 +9,8 @@ docker exec -it chiaharvest1 venv/bin/chia stop all
 docker-compose down
 
 # mount
-for i in {1..9}; do mount /mnt/dskusb$i ; done
+for i in {1..9}; do mount /mnt/dskusb0$i ; done
 for i in {10..18}; do mount /mnt/dskusb$i ; done
+
+# checkdisk
+for i in {c..t}; do /usr/sbin/exfatfsck /dev/disk/by-label/chia-sd${i}1 ; done
