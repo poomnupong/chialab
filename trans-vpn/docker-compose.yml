@@ -1,6 +1,8 @@
 version: '3.3'
 services:
   trans-ovpn:
+    hostname: trans-ovpn1
+    container_name: trans-ovpn1
     cap_add:
       - NET_ADMIN
     volumes:
