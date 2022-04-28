@@ -6,6 +6,9 @@ docker-compose up -d
 # check chia status
 docker exec -it chia01 venv/bin/chia show -s -c
 
+# check total plots count
+docker exec -it chia01 venv/bin/chia farm summary
+
 # shutdown
 docker exec -it chia01 venv/bin/chia stop all
 docker-compose down
