@@ -12,5 +12,12 @@ docker-compose down
 for i in {1..9}; do mount /mnt/dskusb0$i ; done
 for i in {10..18}; do mount /mnt/dskusb$i ; done
 
+# umount
+for i in {1..9}; do umount /mnt/dskusb0$i ; done
+for i in {10..18}; do umount /mnt/dskusb$i ; done
+
+# 2022.04.30
+# moved dskusb04-08 (3.5" enclosure) to synology
+
 # checkdisk
 for i in {c..t}; do /usr/sbin/exfatfsck /dev/disk/by-label/chia-sd${i}1 ; done
