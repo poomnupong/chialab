@@ -7,7 +7,7 @@ services:
     hostname: chia
     container_name: chia01
     #image: ghcr.io/chia-network/chia:latest
-    image: pnupong/dk-chia:1.3.4
+    image: pnupong/dk-chia:1.3.5
     network_mode: host
 #    ports:
 #      - "192.168.86.10:8444:8444"
@@ -18,8 +18,9 @@ services:
       - "/volume1/general/chia/chiahome:/root"
       - "/etc/localtime:/etc/localtime:ro"
       - "/volume1/general/chia/plots:/plots"
-      - "/volume3/vol3general/chia/plots:/vol3plots"
-      - "/volume4/vol4general/chia/plots:/vol4plots"
+      - "/volume2/vol2general/chia/plots:/plotsvol2"
+#      - "/volume3/vol3general/chia/plots:/plotsvol3"
+#      - "/volume4/vol4general/chia/plots:/plotsvol4"
 #      - "/volumeUSB1/usbshare/chia/plots:/plotsusb1"
 #      - "/volumeUSB2/usbshare/chia/plots:/plotsusb2"
 #      - "/volumeUSB3/usbshare/chia/plots:/plotsusb3"

@@ -7,7 +7,7 @@ services:
       - NET_ADMIN
     volumes:
       - '/volume1/general/01trvpn/:/01trvpn'
-      - '/volume2/temp1/01trvpn-home/:/data'
+      - '/volume1/temp1/01trvpn-home/:/data'
     environment:
       - OPENVPN_PROVIDER=VPNUNLIMITED
       - OPENVPN_CONFIG=ca-tr
